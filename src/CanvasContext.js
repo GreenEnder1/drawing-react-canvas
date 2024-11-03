@@ -9,10 +9,10 @@ export const CanvasProvider = ({ children }) => {
 
   const prepareCanvas = () => {
     const canvas = canvasRef.current
-    canvas.width = window.innerWidth * 2;
-    canvas.height = window.innerHeight * 2;
-    canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
+    canvas.width = 1200;
+    canvas.height = 1200;
+    canvas.style.width = `${600}px`;
+    canvas.style.height = `${600}px`;
 
     const context = canvas.getContext("2d")
     context.scale(2, 2);
@@ -21,6 +21,20 @@ export const CanvasProvider = ({ children }) => {
     context.lineWidth = 5;
     contextRef.current = context;
   };
+
+  const updateSettings = (size, color) => {
+    const canvas = canvasRef.current
+    const context = canvas.getContext("2d")
+    if (color != "")
+    {
+      context.strokeStyle = color;
+    }
+    if (size != -1)
+    {
+      context.lineWidth = size;
+    }
+    contextRef.current = context;
+  }
 
   const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
@@ -56,6 +70,7 @@ export const CanvasProvider = ({ children }) => {
         canvasRef,
         contextRef,
         prepareCanvas,
+        updateSettings,
         startDrawing,
         finishDrawing,
         clearCanvas,

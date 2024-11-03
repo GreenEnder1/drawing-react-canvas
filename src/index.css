@@ -1,10 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family:'Press Start 2P';
+  color: white;
+  background-image: url("synthwave.jpg");
 }
 
 code {
@@ -13,8 +13,35 @@ code {
 }
 
 button {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 32px;
+  font-family:'Press Start 2P';
+  outline: white 1px solid;
+}
+
+.header-elements, .footer-elements {
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.circle-options {
+  min-width: 160px;
+}
+
+.body-elements {
+  display: flex;
+}
+.body-elements > div {
+  flex: 1;
+}
+
+.settings-left {
+  align-content: left;
+}
+
+.settings-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
